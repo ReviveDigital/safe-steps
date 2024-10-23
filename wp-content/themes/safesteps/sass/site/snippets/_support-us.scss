@@ -1,0 +1,137 @@
+.support-us {
+	background:url('images/darker-circle.png') $offyellow right bottom no-repeat;
+	background-size: 40%;
+	padding:20px 0;
+	text-align: center;
+	@include media-breakpoint-up(lg) {
+		padding:80px 0;
+	}
+	@include media-breakpoint-up(xl) {
+		padding:80px 0 160px;
+	}
+
+	@include e('title') {
+		@include heading;
+		&:before {
+			background:none;
+			padding:0;
+		}
+	}
+
+	@include e('text') {
+		@include text;
+		margin-bottom: 20px;
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 40px;
+		}
+	}
+
+	@include e('container') {
+		@include flex;
+	}
+
+	@include e('block') {
+		@include make-col(12);
+		margin-bottom: 20px;
+		-webkit-box-shadow: 1px 1px 4px 3px darken($grey,10%); 
+		-moz-box-shadow:    1px 1px 4px 3px darken($grey,10%); 
+		box-shadow:         1px 1px 4px 3px darken($grey,10%); 
+		border-radius: 20px;
+		background:$white;
+		order:1;
+		&:hover {
+			text-decoration:none;
+		}
+		&:nth-child(2) {
+			order:3;
+		}
+		&:nth-child(3) {
+			order:2;
+		}
+		@include media-breakpoint-up(lg) {
+			@include make-col(3.8);
+			margin:0;
+		}
+		@include m('main') {
+			margin-bottom: 20px;
+			@include media-breakpoint-up(lg) {
+				margin-bottom: 40px;
+			}
+		}
+		@include m('blue') {
+			.support-us__block-title {
+				color:$blue;
+				&:hover {
+					color:lighten($blue,20%);
+				}
+			}
+			.support-us__block-button {
+				background:$blue;
+			}
+		}
+		@include m('pink') {
+			.support-us__block-title {
+				color:$pink;
+				&:hover {
+					color:lighten($pink,20%);
+				}
+			}
+			.support-us__block-button {
+				background:$pink;
+			}
+		}
+		@include m('darkgrey') {
+			.support-us__block-title {
+				color:$darkgrey;
+				&:hover {
+					color:lighten($black,20%);
+				}
+			}
+			.support-us__block-button {
+				background:$darkgrey;
+			}
+		}
+	}
+
+	@include e('block-img') {
+		width:100%;
+		border-top-right-radius: 20px;
+		border-top-left-radius: 20px;
+	}
+
+	@include e('block-content') {
+		padding:20px;
+		border-bottom-right-radius: 20px;
+		border-bottom-left-radius: 20px;
+		text-align: center;
+	}
+
+	@include e('block-title') {
+		@include text($black,22px,600);
+		display: block;
+		line-height: 1.4;
+		margin-bottom: 15px;
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+			&:hover {
+				text-decoration:none;
+			}
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: 26px;
+		}
+	}
+
+	@include e('block-text') {
+		@include text;
+		display: block;
+		margin-bottom: 10px;
+		@include media-breakpoint-up(lg) {
+			font-size: 15px;
+		}
+	}
+
+	@include e('block-button') {
+		@include button;
+	}
+}

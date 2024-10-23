@@ -1,0 +1,19 @@
+.nothing-found {
+	text-align: center;
+	@include media-breakpoint-up(lg) {
+		margin:40px 0;
+	}
+	@include e('title') {
+		@include heading;
+		padding:0;
+		&:before {
+			background:none;
+		}
+	}
+	@include e('text') {
+		@include text;
+		a {
+			color:$purple;
+		}
+	}
+}

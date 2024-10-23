@@ -1,0 +1,250 @@
+.menu-item-has-children {
+	&.active {
+		border:1px solid black;
+	}
+}
+
+.header {
+	background:$white;
+	position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 400;
+
+	@include e('container') {
+		@include flex($align-items:center);
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	@include e('logo') {
+		@include make-col(6);
+		@include media-breakpoint-up(md) {
+			@include make-col(2);
+		}
+	}
+
+	@include e('logo-img') {
+		max-width:120px;
+		height:100%;
+		@include media-breakpoint-up(md) {
+			max-width:160px;
+		}
+		@include media-breakpoint-up(xl) {
+			max-width:240px;
+		}
+	}
+
+	@include e('mobile-icon') {
+		@include make-col(6);
+		text-align: right;
+		font-size: 30px;
+	}
+
+	@include e('right') {
+		@include make-col(12);
+		order:4;
+		@include media-breakpoint-up(lg) {
+			@include make-col(10);
+			order:2;
+			text-align: right;
+		}
+	}
+
+	@include e('top-right') {
+		@include flex($align-items:center);
+		order:1;
+		margin-top: 10px;
+		@include media-breakpoint-up(md) {
+			order:2;
+			margin-bottom: 10px;
+		}
+		@include media-breakpoint-up(lg) {
+			justify-content: flex-end;
+		}
+	}
+
+	@include e('top-right-block') {
+		margin-right:20px;
+		line-height: 1.4;
+		@include m('last') {
+			margin-right:0;
+		}
+	}
+
+	@include e('top-right-text') {
+		@include text($black,12px);
+		display: block;
+		@include media-breakpoint-up(md) {
+	        font-size:12px;
+	        display: inline-block;
+	    }
+	    @include media-breakpoint-up(lg) {
+	        font-size:14px;
+	    }
+		@include m('link') {
+			&:hover {
+				color:$orange;
+				text-decoration: none;
+			}
+		}
+	}
+
+	@include e('top-phone') {
+		@include text($purple,16px,600);
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+		}
+	}
+
+	@include e('navigation') {
+		@include media-breakpoint-up(lg) {
+			@include flex($justify:flex-end,$align-items:center);
+		}
+	}
+
+	@include e('nav') {
+		display: none;
+		@include m('expanded') {
+			display: block;
+			position: absolute;
+			background: $white;
+			padding:20px;
+			left:0;
+			right:0;
+			z-index: 800;
+		}
+		@include media-breakpoint-up(lg) {
+			display: block !important;
+			margin-right: 10px;
+		}
+		@include media-breakpoint-up(xl) {
+			margin-right: 40px;
+		}
+		ul {
+			margin:0;
+			padding:0;
+			li {
+				list-style: none;
+				position: relative;
+				border-bottom: 1px dashed $grey;
+				&:last-of-type {
+					border-bottom:0;
+				}
+				.fa {
+					margin-left:10px;
+					font-size: 15px;
+				}
+				@include media-breakpoint-up(lg) {
+					display: inline-block;
+					border:0;
+					margin-right: 10px;
+					.fa {
+						display: none;
+					}
+					&:hover ul {
+						position: absolute;
+						display: block;
+						background:$white;
+						padding:10px;
+						text-align: left;
+						width:280px;
+					}
+					&:last-of-type {
+						margin-right:0;
+					}
+				}
+				@include media-breakpoint-up(xl) {
+					margin-right: 30px;
+				}
+				a {
+					@include text($black,14px,500);
+					display: inline-block;
+					padding:10px 0;
+					&:last-of-type {
+						padding-bottom:0;
+					}
+					@include media-breakpoint-up(lg) {
+						font-size: 13px;
+						&:hover {
+							color:$orange;
+							text-decoration: none;
+						}
+					}
+					@include media-breakpoint-up(xl) {
+						font-size: 16px;
+					}
+				}
+				ul {
+					display: none;
+					li {
+						margin-bottom: 10px;
+						display: block;
+						&:last-of-type {
+							margin:0;
+						}
+						.fa {
+							display: none;
+						}
+						a {
+							padding:0;
+							padding-left: 10px;
+							@include media-breakpoint-up(md) {
+								font-size: 13px;
+							}
+							@include media-breakpoint-up(xl) {
+								font-size: 15px;
+							}
+						}
+						.sub-menu {
+							display: none;
+							left:100%;
+							top:0;
+						}
+						&:hover .sub-menu {
+							position: absolute;
+							display: block;
+							background:$white;
+							padding:10px;
+							text-align: left;
+							width:250px;
+						}
+					}
+				}
+				&.current_page_item {
+					> a {
+						color:$orange;
+					}
+				}
+			}
+		}
+	}
+
+	@include e('mobile-donate') {
+		@include button($orange);
+		width:100%;
+		margin:10px 0;
+		text-align: center;
+	}
+
+	@include e('navigation-button') {
+		@include button;
+		padding:10px 20px;
+		@include m('donate') {
+			background: $orange;
+			margin-left:10px;
+		}
+		@include media-breakpoint-up(lg) {
+			padding:10px 30px;
+			font-size: 13px;
+		}
+		@include media-breakpoint-up(xl) {
+			padding:10px 50px;
+			font-size: 15px;
+		}
+	}
+}

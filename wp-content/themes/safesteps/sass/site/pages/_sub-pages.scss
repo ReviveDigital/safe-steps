@@ -1,0 +1,592 @@
+.sub-pages {
+	@include e('container') {
+		@include flex;
+		margin:20px 0;
+		@include media-breakpoint-up(lg) {
+			margin:60px 0;
+		}
+		@include m('main') {
+			justify-content: center;
+		}
+	}
+
+	@include e('block') {
+		@include make-col(12);
+		margin-bottom: 40px;
+		text-align: center;
+		@include media-breakpoint-up(md) {
+			@include make-col(5.5);
+			margin-right: 8.33334%;
+			&:nth-child(2n+2) {
+				margin-right: 0;
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			@include make-col(3.5);
+			margin-right: 6.249995%;
+			&:nth-child(2n+2) {
+				margin-right: 6.249995%;
+			}
+			&:nth-child(3n+3) {
+				margin-right: 0;
+			}
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+
+	@include e('cta') {
+		margin:0 auto;
+		max-width: 900px;
+		margin-bottom: 30px;
+		.cta {
+			max-width: 100%;
+		}
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 60px;
+		}
+	}
+
+	@include e('block-img') {
+		width:100%;
+		margin-bottom: 10px;
+		border-radius: 30px;
+	}
+
+	@include e('block-title') {
+		@include text($black,20px,600);
+		display: block;
+		margin-bottom: 10px;
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: 22px;
+		}
+	}
+
+	@include e('block-button') {
+		@include button($pink);
+	}
+
+	@include e('left') {
+		@include make-col(12);
+		@include media-breakpoint-up(lg) {
+			@include make-col(8);
+		}
+	}
+
+	@include e('flex') {
+		margin-bottom: 10px;
+		@include m('donations') {
+			@include flex($align-items: center);
+			background: $lightpink;
+			border-radius: 10px;
+			padding:20px;
+			text-align: center;
+			@include media-breakpoint-up(lg) {
+				text-align: left;
+			}
+		}
+	}
+
+	@include e('donation-left') {
+		@include make-col(12);
+		@include media-breakpoint-up(lg) {
+			@include make-col(6);
+		}
+	}
+	
+	@include e('donation-title') { 
+		@include text($purple,20px,600);
+		@include media-breakpoint-up(lg) {
+			font-size: 24px;
+		}
+	}
+
+	@include e('donation-img') { 
+		max-width: 200px;
+	}
+
+	@include e('donation-right') {
+		@include make-col(12);
+		@include media-breakpoint-up(lg) {
+			@include make-col(6);
+			text-align: right;
+		}
+	}
+
+	@include e('donation-button') { 
+		@include button($pink);
+		margin-top: 10px;
+		@include media-breakpoint-up(lg) {
+			margin:0;
+			font-size: 18px;
+		}
+	}
+
+	@include e('heading') {
+		@include text($purple,18px,600);
+		@include media-breakpoint-up(lg) {
+			font-size: 24px;
+		}
+	}
+
+	@include e('text') {
+		@include text;
+		h2 {
+			@include text($purple,18px,600);
+			@include media-breakpoint-up(lg) {
+				font-size: 22px;
+			}
+		}
+		h3 {
+			@include text($purple,16px,600);
+			@include media-breakpoint-up(lg) {
+				font-size: 20px;
+			}
+		}
+		h4 {
+			@include text($purple,14px,600);
+			@include media-breakpoint-up(lg) {
+				font-size: 18px;
+			}
+		}
+		b, strong {
+			font-weight: 600;
+			color:$black;
+		}
+		a {
+			color:$orange;
+			&:hover {
+				color:$black;
+				text-decoration: underline;
+			}
+		}
+		ul {
+			li {
+				margin-bottom: 10px;
+				&.page-item-522, &.page-item-540, &.page-item-542 {
+					list-style: none;
+				}
+				a {
+					@include text($pink,15px,600);
+					text-decoration: underline;
+					&:hover {
+						color:$purple;
+						text-decoration: none;
+					}
+					&:before {
+						content:'\f111';
+						@include font-awesome($pink,9px,600);
+						vertical-align: middle;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+		a {
+			color:$orange;
+			text-decoration: underline;
+			&:hover {
+				color:lighten($orange,20%);
+				text-decoration: none;
+			}
+		}
+	}
+
+	@include e('text-list') {
+		padding:0;
+	}
+	
+	@include e('articles') {
+		margin:20px 0;
+		@include media-breakpoint-up(lg) {
+			margin:60px 0;
+		}
+	}
+
+	@include e('article-block') {
+		margin-bottom: 20px;
+		border-radius: 20px;
+		-webkit-box-shadow: 1px 1px 4px 3px darken($grey,10%); 
+		-moz-box-shadow:    1px 1px 4px 3px darken($grey,10%); 
+		box-shadow:         1px 1px 4px 3px darken($grey,10%); 
+		@include media-breakpoint-up(lg) {
+			max-width:1100px;
+			margin:0 auto;
+			margin-bottom: 40px;
+			@include flex;
+			&:nth-child(even) {
+				.sub-pages__article-image {
+					order:2;
+				}
+				.sub-pages__article-content {
+					order:1;
+				}
+			}
+		}
+	}
+
+	@include e('article-image') {
+		@include media-breakpoint-up(lg) {
+			@include make-col(5);
+		}
+	}
+
+	@include e('article-content') {
+		text-align: center;
+		padding:20px;
+		@include media-breakpoint-up(lg) {
+			@include make-col(7);
+			background:#F4F6F8;
+			position: relative;
+		}
+	}
+
+	@include e('article-inner') {
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-right: -50%;
+			-webkit-transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	@include e('article-title') {
+		@include text($purple,22px,600);
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 26px;
+		}
+	}
+
+	@include e('article-date') {
+		@include text($size:13px);
+		p {
+			margin:0;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 13px;
+		}
+	}
+
+	@include e('article-text') {
+		@include text;
+		margin:10px 0;
+		@include media-breakpoint-up(lg) {
+			font-size: 15px;
+		}
+	}
+
+	@include e('article-link') {
+		@include text($purple,14px,600);
+		&:after {
+			content:'\f061';
+			@include font-awesome($size:11px);
+			padding-left:10px;
+		}
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+			&:after {
+				color:$orange;
+				padding-left: 15px;
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 14px;
+		}
+	}
+
+	@include e('article-img') {
+		width:100%;
+		height:100%;
+	}
+
+	@include e('article-main-img') {
+		width:100%;
+		margin-bottom: 20px;
+	}
+
+	@include e('back-link') {
+		@include text($purple,14px,500);
+		display: block;
+		margin:20px 0;
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 14px;
+		}
+	}
+
+	@include e('flex-img') {
+		width:100%;
+	}
+
+	@include e('button') {
+		@include button;
+	}
+
+	@include e('opportunity') {
+		border-bottom: 1px solid $grey;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+	}
+
+	@include e('opportunity-title') {
+		@include text($purple,18px,600);
+		@include media-breakpoint-up(lg) {
+			font-size: 18px;
+		}
+	}
+
+	@include e('opportunity-list') {
+		padding:0;
+		margin:10px 0;
+	}
+
+	@include e('opportunity-list-item') {
+		display: inline-block;
+		list-style: none;
+		margin-right: 10px;
+		@include text;
+		@include media-breakpoint-up(lg) {
+			font-size: 15px;
+		}
+		&:after {
+			content:'|';
+			padding-left:10px;
+		}
+		&:last-of-type {
+			margin-right:0;
+			&:after {
+				content:'';
+			}
+		}
+	}
+
+	@include e('opportunity-text') {
+		@include text;
+	}
+
+	@include e('opportunity-cta') {
+		background:$grey;
+		padding:20px;
+		margin:20px 0;
+		text-align: center;
+	}
+
+	@include e('opportunity-cta-title') {
+		@include text($black,20px,600);
+		margin-bottom: 10px;
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+		}
+	}
+
+	@include e('opportunity-cta-inner') {
+		@include flex($justify:center,$align-items:center);
+	}
+
+	@include e('opportunity-cta-email') {
+		@include text($purple,17px);
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+		}
+		@include media-breakpoint-up(md) {
+			margin-right: 20px;
+		}
+	}
+
+	@include e('opportunity-cta-button') {
+		@include button($pink);
+		margin-top: 10px;
+		@include media-breakpoint-up(md) {
+			margin:0;
+		}
+	}
+
+	@include e('right') {
+		@include make-col(12);
+		@include media-breakpoint-up(lg) {
+			@include make-col(3.5);
+		}
+	}
+
+	@include e('nav') {
+		background:$grey;
+		padding:10px;
+		text-align: center;
+		margin-bottom: 20px;
+		@include media-breakpoint-up(lg) {
+			padding:20px;
+		}
+	}
+	
+	@include e('subtitle') {
+		@include text($purple,22px,600);
+		margin-bottom: 10px;
+		@include media-breakpoint-up(lg) {
+			font-size: 19px;
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: 22px;
+		}
+	}
+
+	@include e('list') {
+		padding:0;
+		margin:0;
+		li {
+			list-style: none;
+			border-bottom: 1px solid darken($grey,20%);
+			a {
+				display: block;
+				@include text;
+				padding:10px 0;
+				&:hover {
+					color:$orange;
+					text-decoration: none;
+				}
+				@include media-breakpoint-up(lg) {
+					font-size: 15px;
+				}
+			}
+			ul {
+				display: none;
+			}
+			&:last-of-type {
+				border:0;
+				margin-bottom: 0;
+			}
+			&.current_page_item {
+				a {
+					color:$orange;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+
+	@include e('opportunity') {
+		margin-bottom: 20px;
+		border-bottom: 1px solid $grey;
+		padding-bottom: 20px;
+		&:last-of-type {
+			border:0;
+			padding:0;
+			margin:0;
+		}
+	}
+
+	@include e('opportunity-title') {
+		@include text($purple,18px,600);
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+		}
+	}
+
+	@include e('opportunity-list') {
+		margin-bottom: 20px;
+	}
+
+	@include e('opportunity-info') {
+		@include text($size:14px);
+		margin-bottom: 5px;
+		list-style: none;
+		@include media-breakpoint-up(lg) {
+			font-size: 15px;
+		}
+		strong {
+			font-weight: 600;
+		}
+	}
+
+	@include e('opportunity-description') {
+		@include text;
+		strong, b {
+			font-weight: 600;
+		}
+	}
+
+	@include e('opportunity-subtitle') {
+		@include text($black,20px,600);
+		margin-bottom: 10px;
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+		}
+	}
+
+	@include e('opportunity-inner') {
+		@include flex($align-items: center);
+	}
+
+	@include e('opportunity-block') {
+		@include make-col(12);
+		margin-bottom: 10px;
+		@include media-breakpoint-up(lg) {
+			@include make-col(5.5);
+			margin:0;
+		}
+	}
+
+	@include e('opportunity-email') {
+		@include text($purple,$weight:500);
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+		}
+		.fal {
+			margin-right: 5px;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 18px;
+		}
+	}
+
+	@include e('opportunity-button') {
+		@include button($purple);
+	}
+
+	@include e('funders') {
+		@include flex($justify:flex-start);
+		margin:20px 0;
+	}
+
+	@include e('funders-block') {
+		@include make-col(5.5);
+		margin-bottom: 10px;
+		margin-right: 8.33334%;
+		&:nth-child(2n+2) {
+			margin-right:0;
+		}
+		@include media-breakpoint-up(lg) {
+			@include make-col(2.5);
+			margin-right: 5.55556%;
+			margin-bottom: 0;
+			&:nth-child(2n+2) {
+				margin-right: 5.55556%;
+			}
+			&:nth-child(4n+4) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	@include e('funders-img') {
+		width:100%;
+	}
+
+}

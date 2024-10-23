@@ -1,0 +1,15 @@
+.button {
+	background:#6D3177 !important;
+	border-color:#6D3177 !important;
+	color:#fff !important;
+}
+
+#screen-meta-links .button:after {
+	color:#fff;
+}
+
+.quicktags-toolbar .button {
+	background:#f3f5f6 !important;
+	border-color: #7e8993 !important;
+	color: #6D3177 !important;
+}

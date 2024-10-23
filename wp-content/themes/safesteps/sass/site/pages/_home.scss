@@ -1,0 +1,294 @@
+.hp-slider {
+	overflow: hidden;
+	.slick-slide {
+		position: relative;
+	}
+	@include e('img') {
+		width:100%;
+	}
+	@include e('overlay') {
+		position: absolute;
+		max-width: 300px;
+		top:40%;
+		left:20px;
+		@include media-breakpoint-up(lg) {
+			max-width: 500px;
+			top:20%;
+		}
+		@include media-breakpoint-up(xl) {
+			max-width:1100px;
+			left:60px;
+		}
+	}
+	@include e('overlay-title') {
+		@include heading($white,15px);
+		padding:0;
+		line-height: 1.2;
+		margin-bottom: 10px;
+		&:before {
+			background:none;
+		}
+		@include media-breakpoint-up(md) {
+			font-size: 20px;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 50px;
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: 70px;
+		}
+	}
+	@include e('overlay-button') {
+		@include button($size:13px);
+		padding:10px 20px;
+		&:hover {
+			background:$orange;
+		}
+		@include media-breakpoint-up(md) {
+			padding:10px 30px;
+			font-size: 15px;
+		}
+		@include media-breakpoint-up(xl) {
+			font-size:20px;
+		}
+	}
+}
+
+.hp-welcome {
+	margin:30px 0;
+	@include media-breakpoint-up(lg) {
+		margin:80px 0;
+	}
+	@include e('inner') {
+		border-left:7px solid $orange;
+		padding-left: 20px;
+	}
+
+	@include e('title') {
+		@include heading;
+		padding:0;
+		&:before {
+			background:none;
+		}
+	}
+
+	@include e('text') {
+		@include text;
+	}
+
+	@include e('button') {
+		@include button;
+	}
+}
+
+.hp-help {
+	padding:40px 0;
+	background: url('images/top-circle.png') $grey no-repeat;
+	@include media-breakpoint-up(lg) {
+		padding:120px 0;
+	}
+
+	@include e('container') {
+		@include flex($align-items: center);
+	}
+
+	@include e('left') {
+		@include make-col(12);
+		order:2;
+		@include media-breakpoint-up(lg) {
+			@include make-col(6);
+			order:1;
+		}
+	}
+	
+	@include e('right') {
+		@include make-col(12);
+		order:1;
+		margin-bottom: 20px;
+		@include media-breakpoint-up(lg) {
+			@include make-col(5.5);
+			order:2;
+			margin:0;
+		}
+	}
+
+	@include e('title') {
+		@include heading;
+	}
+
+	@include e('list') {
+		padding:0;
+		margin:20px 0;
+	}
+
+	@include e('list-item') {
+		list-style: none;
+		margin-bottom: 15px;
+	}
+
+	@include e('list-link') {
+		@include text($black,$weight:500);
+		&:after {
+			content:'\f061';
+			@include font-awesome;
+			padding-left:10px;
+		}
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+			&:after {
+				color:$orange;
+				padding-left: 15px;
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+		}
+	}
+
+	@include e('cta') {
+		margin:20px 0;
+	}
+
+	@include e('cta-title') {
+		display: inline-block;
+		@include text($black,16px,500);
+		margin-right: 10px;
+	}
+
+	@include e('cta-phone') {
+		display: inline-block;
+		@include text($orange,24px,600);
+		&:hover {
+			color:$purple;
+			text-decoration: none;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 28px;
+		}
+	}
+}
+
+.hp-domestic {
+	background: url('images/dark-circle.png') $darkgrey right no-repeat;
+	height:450px;
+	position: relative;
+
+	@include e('img') {
+		opacity: 0.4;
+		height:450px;
+	}
+
+	@include e('container') {
+		margin:0 auto;
+		text-align: center;
+		padding:40px 20px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		@include media-breakpoint-up(lg) {
+			max-width: 800px;
+		}
+	}
+
+	@include e('title') {
+		@include heading($white);
+		padding:0;
+		&:before {
+			background:none;
+		}
+	}
+
+	@include e('text') {
+		@include text($white);
+		margin:10px 0;
+	}
+
+	@include e('button') {
+		@include button($white,$darkgrey);
+		margin-bottom: 10px;
+		&:hover {
+			background:$orange;
+			color:$white;
+		}
+		&:first-of-type {
+			margin-right: 20px;
+		}
+		@include media-breakpoint-up(lg) {
+			margin:0;
+		}
+	}
+}
+
+.hp-about {
+	margin:20px;
+	@include media-breakpoint-up(lg) {
+		margin:80px 0;
+	}
+
+	@include e('container') {
+		@include flex($align-items: center,$justify:flex-end);
+		margin:30px 0;
+		position: relative;
+		@include media-breakpoint-up(lg) {
+			margin:60px 0;
+		}
+	}
+
+	@include e('content') {
+		background: $purple;
+		order:2;
+		@include media-breakpoint-up(lg) {
+			position: absolute;
+			left:0;
+			z-index: 200;
+			@include make-col(8);
+			order:1;
+		}
+	}
+
+	@include e('inner') {
+		padding:20px;
+		@include media-breakpoint-up(xl) {
+			padding:40px;
+		}
+	}
+
+	@include e('title') {
+		@include heading($white);
+	}
+
+	@include e('text') {
+		@include text($white);
+		@include media-breakpoint-up(lg) {
+			font-size: 15px;
+		}
+	}
+
+	@include e('button') {
+		@include button($orange);
+		&:hover {
+			background:$white;
+			color:$purple;
+		}
+	}
+
+	@include e('img') {
+		width:100%;
+	}
+	
+	@include e('image') {
+		order:1;
+		@include media-breakpoint-up(lg) {
+			@include make-col(5);
+			position: relative;
+			order:2;
+			right:0;
+		}
+	}
+
+}

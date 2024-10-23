@@ -1,0 +1,43 @@
+.stories {
+	margin-bottom: 20px;
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 60px;
+	}
+
+	@include e('block') {
+		background:url('images/purple-circle.png') $lightpurple right -80px bottom no-repeat;
+		padding:20px 0;
+		@include media-breakpoint-up(lg) {
+			padding:60px 0;
+		}
+		&:nth-child(even) {
+			background:url('images/left-circle.png') left -80px bottom no-repeat;
+			.stories__block-inner {
+				@include media-breakpoint-up(xl) {
+					padding-left:300px;
+				}
+			}
+		}
+	}
+
+	@include e('block-inner') {
+		@include media-breakpoint-up(lg) {
+			width:80%;
+			&:nth-child(even) {
+				width:100%;
+			}
+		}
+	}
+
+	@include e('title') {
+		@include text($purple,20px,600);
+	}
+
+	@include e('text') {
+		@include text($size:15px);
+		@include media-breakpoint-up(lg) {
+			font-size: 17px;
+		}
+	}
+
+}

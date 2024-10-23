@@ -1,0 +1,52 @@
+.banner {
+	@include e('image') {
+		background:$purple;
+		position: relative;
+	}
+	@include e('img') {
+		opacity: 0.5;
+		background-size: cover;
+		height:80px;
+		@include media-breakpoint-up(lg) {
+			height:150px;
+		}
+		@include media-breakpoint-up(xl) {
+			height:250px;
+		}
+	}
+	@include e('title') {
+		position: absolute;
+		top:25%;
+		margin:0;
+		line-height: normal;
+		@include text($white,20px,600);
+		@include media-breakpoint-up(lg) {
+			font-size: 30px;
+			top:50%;
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: 40px;
+		}
+	}
+	@include e('bread') {
+		overflow-y: scroll;
+   		white-space: nowrap;
+		background:$grey;
+		@include text($darkgrey,10px);
+		padding:5px 0;
+		a {
+			color:$darkgrey;
+			&:hover {
+				text-decoration: none;
+				color:$purple;
+			}
+		}
+		strong {
+			font-weight: 600;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 11px;
+			padding:10px 0;
+		}
+	}
+}

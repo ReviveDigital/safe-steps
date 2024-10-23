@@ -1,0 +1,16 @@
+.intro {
+	@include text;
+	text-align: center;
+	margin:20px 0;
+	@include media-breakpoint-up(lg) {
+		margin:60px 0;
+	}
+
+	a {
+		color:$orange;
+		&:hover {
+			color:$black;
+			text-decoration: underline;
+		}
+	}
+}

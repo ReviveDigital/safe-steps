@@ -1,0 +1,136 @@
+.footer {
+
+	@include e('container') {
+		@include flex;
+		padding:20px 0;
+		@include media-breakpoint-up(lg) {
+			padding:40px 0;
+		}
+		@include m('bottom') {
+			padding:0;
+		}
+	}
+
+	@include e('contact') {
+		@include make-col(12);
+		@include media-breakpoint-up(lg) {
+			@include make-col(3);
+		}
+	}
+
+	@include e('contact-text') {
+		@include text($black,15px,500);
+		margin-bottom: 20px;
+		@include media-breakpoint-up(md) {
+			font-size: 20px;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+		}
+	}
+
+	@include e('contact-phone') {
+		@include text($purple,20px,600);
+		display: block;
+		margin-bottom: 10px;
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 26px;
+		}
+	}
+
+	@include e('contact-address') {
+		@include text;
+	}
+
+	@include e('nav') {
+		@include make-col(12);
+		@include media-breakpoint-up(md) {
+			@include flex;
+		}
+		@include media-breakpoint-up(lg) {
+			@include make-col(7.5);
+		}
+	}
+
+	@include e('nav-block') {
+		@include make-col(12);
+		margin-bottom: 10px;
+		@include media-breakpoint-up(md) {
+			@include make-col(5.5);
+			margin-bottom: 20px;
+		}
+		@include media-breakpoint-up(lg) {
+			@include make-col(3.5);
+			margin:0;
+		}
+
+		&:last-of-type {
+			@include make-col(8);
+			margin-top: 16px;
+
+			.footer__nav-list {
+				column-count: 1;
+
+				@include media-breakpoint-up(md) {
+					column-count: 2;
+				}
+			}
+		}
+	}
+
+	@include e('nav-title') {
+		@include text($black,18px,600);
+		margin-bottom: 5px;
+		display: block;
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+		}
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 10px;
+		}
+	}
+
+	@include e('nav-list') {
+		margin:0;
+		padding:0;
+		li {
+			list-style: none;
+			margin-bottom: 5px;
+			a {
+				@include text($black,15px);
+				&:hover {
+					color:$orange;
+				}
+				@include media-breakpoint-up(lg) {
+					font-size: 15px;
+				}
+				@include media-breakpoint-up(xl) {
+					font-size: 16px;
+				}
+			}
+			ul {
+				display: none;
+			}
+		}
+	}
+
+	@include e('bottom-text') {
+		@include text($black,12px);
+		margin-bottom: 10px;
+		a {
+			color:$orange;
+			&:hover {
+				color:$black;
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 12px;
+		}
+	}
+
+}

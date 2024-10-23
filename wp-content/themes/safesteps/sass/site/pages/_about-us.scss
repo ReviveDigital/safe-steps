@@ -1,0 +1,119 @@
+.about-us {
+	
+	@include e('container') {
+		@include flex;
+		margin:20px 0;
+		@include media-breakpoint-up(lg) {
+			margin:60px 0;
+		}
+	}
+
+	@include e('left') {
+		@include make-col(12);
+		@include media-breakpoint-up(lg) {
+			@include make-col(4);
+		}
+	}
+
+	@include e('left-text') {
+		@include text($black,20px,500);
+		margin-bottom: 20px;
+		line-height: 1.4;
+		@include media-breakpoint-up(lg) {
+			font-size: 32px;
+		}
+	}
+
+	@include e('right') {
+		@include make-col(12);
+		@include media-breakpoint-up(lg) {
+			@include make-col(7.5);
+		}
+	}
+
+	@include e('testimonials') {
+		background: url('images/dark-circle.png') $purple right no-repeat;
+		background-size: 20% 100%;
+		margin:20px 0;
+		@include media-breakpoint-up(lg) {
+			margin:60px 0;
+		}
+	}
+	
+	@include e('slider') {
+		@include media-breakpoint-up(xl) {
+			width:60%;	
+		}
+	}
+
+	@include e('testimonials-title') {
+		@include heading($white);
+		margin-top: 20px;
+		@include media-breakpoint-up(lg) {
+			font-size: 32px;
+			margin-top: 60px;
+		}
+	}
+
+	@include e('testimonials-text') {
+		@include text($white);
+		margin-left:20px;
+		margin-bottom: 20px;
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 60px;
+		}
+	}
+
+	@include e('buttons') {
+		margin:20px 0;
+		@include media-breakpoint-up(lg) {
+			margin:100px 0;
+		}
+	}
+
+	@include e('large-button') {
+		@include make-col(12);
+		margin-bottom: 20px;
+		border-radius: 20px;
+		text-align: center;
+		background: $pink;
+		display: block;
+		padding:15px 30px;
+		&:hover {
+			background:lighten($purple,20%);
+			text-decoration: none;
+		}
+		&:nth-child(2) {
+			background: $blue;
+			&:hover {
+				background:lighten($blue,20%);
+			}
+		}
+		@include media-breakpoint-up(lg) {
+			@include make-col(5.8);
+			@include flex($align-items: center,$justify:center);
+			margin:0;
+			padding:20px 30px;
+		}
+	}
+
+	@include e('large-button-icon') {
+		max-width: 60px;
+		margin-right: 10px;
+	}
+
+	@include e('large-button-title') {
+		@include text($white,20px,600);
+		display: block;
+		@include media-breakpoint-up(lg) {
+			font-size: 24px;
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: 30px;
+		}
+	}
+
+	@include e('large-button-text') {
+		@include text($white,16px);
+	}
+}

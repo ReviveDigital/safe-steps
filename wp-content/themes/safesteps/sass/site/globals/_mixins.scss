@@ -1,0 +1,85 @@
+@mixin e($element) {
+    &__#{$element} {
+        @content;
+    }
+}
+
+@mixin m($element) {
+    &--#{$element} {
+        @content;
+    }
+}
+
+// Make Flex
+@mixin flex($direction:row,$align-items:stretch,$align-content:space-between,$wrap:wrap,$justify:space-between) {
+	display: flex;
+    flex-direction: $direction;
+	flex-wrap: $wrap;
+	justify-content: $justify;
+	align-items: $align-items;
+	align-content:$align-content;
+}
+
+// Text
+@mixin text($color:$text,$size:15px,$weight:300) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    @include media-breakpoint-up(lg) {
+        font-size:17px;
+    }
+}
+
+// Heading
+@mixin heading($color:$black,$size:22px,$weight:600) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+    padding-left:20px;
+    position: relative;
+    &:before {
+        background:$orange;
+        width: 7px;
+        display: inline-block;
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    @include media-breakpoint-up(lg) {
+        font-size:30px;
+    }
+    @include media-breakpoint-up(xl) {
+        font-size:36px;
+    }
+}
+
+// Button
+@mixin button($background:$pink,$color:$white,$size:15px,$weight:600) {
+    background: $background;
+    display: inline-block;
+    padding:10px 30px;
+    border-radius: 50px;
+    color:$color;
+    font-size: $size;
+    font-weight: $weight;
+    &:hover {
+        background:darken($pink,20%);
+        text-decoration: none;
+        color:$white;
+    }
+    @include media-breakpoint-up(lg) {
+        padding:10px 50px;
+    }
+}
+
+// Font Awesome
+@mixin font-awesome($color:$black,$size:17px,$weight:300) {
+    @include fa-icon;
+    @extend .fal;
+    color:$color;
+    font-size: $size;
+    font-weight:$weight;
+    transition: all 0.3s ease;
+}

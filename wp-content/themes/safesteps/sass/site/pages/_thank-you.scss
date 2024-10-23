@@ -1,0 +1,29 @@
+.thank-you {
+	text-align: center;
+	margin:40px 0;
+	.fal {
+		color:$orange;
+		font-size:70px;
+		margin-bottom: 30px;
+	}
+	@include e('title') {
+		@include text($orange,22px,600);
+		margin-bottom:20px;
+		line-height: normal;
+		@include media-breakpoint-up(lg) {
+			font-size: 26px;
+		}
+	}
+	@include e('text') {
+		@include text($black,20px);
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+		}
+		a {
+			color:$orange;
+			&:hover {
+				color:$purple;
+			}
+		}
+	}
+}

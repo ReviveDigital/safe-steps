@@ -1,0 +1,130 @@
+// Colours 
+$orange: #F07E19;
+$purple: #6D3177;
+$lightpurple: #FAF5FF;
+$offyellow: #FDFAF0;
+$pink: #A20067;
+$lightpink: #F0E1EB;
+$blue: #426DA9;
+$grey: #f5f5f5;
+$darkgrey: #333F48;
+$text: #6C6B6B;
+$white: #ffffff;
+$black: #000;
+$text: #707171;
+$error: #b11616;
+$errorbg: #e8d0d0;
+
+body {
+	font-family: montserrat, sans-serif;
+	line-height:1.8;
+}
+
+a {
+	transition: all 0.3s ease;
+}
+
+.error404 {
+	.exit {
+		display: none;
+	}
+	footer {
+		border-top: 1px solid $grey;
+	}
+}
+
+.accordion {
+	display: none;
+}
+
+.accordion.active {
+	display: block;
+	transition: all 0.3s ease;
+}
+
+/* Cookie Bar */
+.cookie {
+	background:$orange;
+	position: fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	padding:10px;
+	text-align: center;
+	z-index: 3000;
+	@include flex($justify:center,$align-items:center);
+	@include e('text') {
+		@include text($white,12px);
+		margin:0;
+		@include media-breakpoint-up(lg) {
+			font-size: 14px;
+		}
+	}
+	@include e('button') {
+		@include button($size:12px);
+		margin-top: 10px;
+		@include media-breakpoint-up(md) {
+			margin:0 0 0 20px;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 13px;
+			padding:8px 30px;
+		}
+	}
+}
+
+/* Exit Button */
+.exit {
+	position: fixed;
+	right:0;
+	top:270px;
+	background:$pink;
+	padding:5px 10px;
+	text-align: center;
+	z-index: 200;
+	@include media-breakpoint-up(lg) {
+		top:150px;
+	}
+	@include media-breakpoint-up(xl) {
+		top:420px;
+		padding:20px 10px;
+	}
+	&:hover {
+		background:lighten($pink,10%);
+		text-decoration: none
+	}
+	@include e('icon') {
+		@include text($white,16px);
+		margin-bottom: 10px;
+		margin-right: 5px;
+		display: inline-block;
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 0;
+		}
+		@include media-breakpoint-up(xl) {
+			font-size: 30px;
+			margin-right: 0;
+		}
+	}
+	@include e('text') {
+		@include text($white,12px,500);
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		display: inline-block;
+		@include media-breakpoint-up(xl) {
+			font-size: 14px;
+			display: block;
+		}
+	}
+}
+
+/* Swiper Pagination */
+.swiper-pagination {
+	.swiper-pagination-bullet {
+		width:12px;
+		height:12px;
+		&.swiper-pagination-bullet-active {
+			background:$orange;
+		}
+	}
+}

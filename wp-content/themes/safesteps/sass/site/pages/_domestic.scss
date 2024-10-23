@@ -1,0 +1,54 @@
+.domestic {
+	background: $grey;
+	padding:40px 0;
+
+	@include e('subtitle') {
+		@include text($purple,22px,600);
+		margin-bottom: 10px;
+		@include media-breakpoint-up(lg) {
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
+	}
+
+	@include e('list') {
+		@include flex;
+	}
+
+	@include e('list-item') {
+		@include make-col(12);
+		position: relative;
+		padding-left: 30px;
+		&:before {
+			content: '\f111'; 
+			@include font-awesome($orange,10px,600);
+			position: absolute;
+			left:0;
+			top:10px;
+		}
+		@include media-breakpoint-up(lg) {
+			@include make-col(5.5);
+		}
+	}
+
+	@include e('list-item-title') {
+		@include text($orange,$weight:600);
+	}
+
+	@include e('list-item-text') {
+		@include text;
+	}
+
+	@include e('text') {
+		@include text;
+		text-align: center;
+		margin-top:20px;
+		margin-bottom: 20px;
+		@include media-breakpoint-up(lg) {
+			max-width: 1000px;
+			margin:0 auto;
+			margin-top:60px;
+			margin-bottom: 60px;
+		}
+	}
+}

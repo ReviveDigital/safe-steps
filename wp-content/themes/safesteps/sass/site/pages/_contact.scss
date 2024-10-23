@@ -1,0 +1,105 @@
+.contact {
+	@include e('container') {
+		@include flex($align-items:center);
+		margin:20px 0;
+		@include media-breakpoint-up(lg) {
+			margin:80px 0;
+		}
+		@include m('location') {
+			align-items: flex-start;
+		}
+	}
+
+	@include e('text') {
+		text-align: center;
+		margin-top:20px;
+		margin-bottom: 20px;
+		@include media-breakpoint-up(lg) {
+			max-width: 900px;
+			margin:0 auto;
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+	}
+
+	@include e('block') {
+		@include make-col(12);
+		line-height: 1.2;
+		text-align: center;
+		margin-bottom: 20px;
+		@include media-breakpoint-up(lg) {
+			@include make-col(3.8);
+			margin:0;
+		}
+	}
+
+	@include e('subtitle') {
+		@include text($black,$weight:500);
+		margin-bottom: 10px;
+	}
+
+	@include e('phone') {
+		@include text($purple,30px,600);
+		&:hover {
+			color:$orange;
+			text-decoration: none;
+		}
+		@include media-breakpoint-up(lg) {
+			font-size: 28px;
+		}
+	}
+
+	@include e('button') {
+		@include button($orange);
+		@include media-breakpoint-up(lg) {
+			font-size: 20px;
+		}
+	}
+
+	@include e('left') {
+		@include make-col(12);
+		@include media-breakpoint-up(lg) {
+			@include make-col(3);
+		}
+	}
+
+	@include e('address-title') {
+		@include text($black,18px,600);
+		@include media-breakpoint-up(xl) {
+			font-size: 18px;
+		}
+	}
+
+	@include e('address') {
+		@include text;
+		margin:10px 0;
+	}
+
+	@include e('social') {
+		padding:0;
+	}
+
+	@include e('social-item') {
+		list-style: none;
+		display: inline-block;
+		margin-right: 10px;
+		&:last-of-type {
+			margin:0;
+		}
+	}
+
+	@include e('social-img') {
+		max-width: 40px;
+	}
+
+	@include e('right') {
+		@include make-col(12);
+		@include media-breakpoint-up(lg) {
+			@include make-col(8.5);
+		}
+		.acf-map {
+			height:500px;
+			width:100%;
+		}
+	}
+}

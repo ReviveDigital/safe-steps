@@ -1,0 +1,256 @@
+input, select, textarea {
+	outline: none;
+	@include text($black,16px);
+	background-color: $white;
+	width:100%;
+	padding:10px;
+	border:1px solid darken($grey,20%);
+	border-radius: 4px;
+	-webkit-transition: all 0.30s ease-in-out;
+	&::-webkit-input-placeholder { 
+	  color: $black;
+	}
+	&::-moz-placeholder {
+	  color: $black;
+	}
+	&:-ms-input-placeholder {
+	  color: $black;
+	}
+	&:-moz-placeholder { 
+	  color: $black;
+	}
+	&:focus {
+		-webkit-box-shadow: 0 0 5px rgba($orange, 0.7);
+		box-shadow: 0 0 5px rgba($orange, 0.7);
+		border: 1px solid rgba($orange, 0.7);
+	}
+}
+
+
+textarea {
+	height:120px;
+	margin-top: 15px;
+}
+
+.gform_ajax_spinner {
+	max-width:40px;
+	margin:10px 10px 0 0;
+	float:right;
+}
+
+// Checkboxes
+input[type=checkbox], input[type=radio] {
+  display: none;
+}
+
+input[type=checkbox] + label:before, input[type=radio] + label:before {
+  content: "";
+  border:1px solid $black;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right:8px;
+  padding:3px;
+  font-family: 'Font Awesome 5 Pro';
+  vertical-align: middle;
+  transition: .2s;
+  line-height:1;
+}
+
+input[type=checkbox]:checked + label:before, input[type=radio]:checked + label:before {
+	content: "\f00c";
+	border-color: $purple;
+	color: $purple;
+	font-size: 15px;
+}
+
+/* Gravity Forms */
+
+.gform_wrapper {
+	border:2px solid $grey;
+	padding:20px;
+	margin-bottom: 20px;
+	label {
+		@include text($black,15px,600);
+		@include media-breakpoint-up(lg) {
+			font-size: 15px;
+		}
+	}
+	.gf_progressbar_percentage {
+		background:$orange;
+		border-radius: 4px;
+		padding:5px 10px;
+		font-size: 14px;
+		color:$white;
+	}
+	.validation_error {
+		background:$errorbg;
+		color:$error;
+		text-align: center;
+		font-size: 14px;
+		font-weight: bold;
+		padding:5px;
+		text-align: center;
+		margin:10px 0;
+	}
+	ul {
+		@include flex;
+		padding:0;
+		li {
+			@include make-col(12);
+			list-style: none;
+			margin-bottom: 10px;
+			&#field_2_1 {
+				background:#d8e5ea;
+				padding:10px;
+				border-radius: 6px;
+				margin-top:20px;
+			}
+			&#field_7_60 {
+				th {
+					font-size: 13px;
+				}
+			}
+
+			&#field_6_103, &#field_6_12 {
+				li label {
+					&:after {
+						content:'*';
+						color:$error;
+						margin-left:10px;
+						font-size: 15px;
+						font-weight: 600;
+					}
+				}
+			}
+
+			&#field_6_11, &#field_6_12, &#field_6_21, &#field_6_23, &#field_6_26, &#field_6_103 {
+				.gfield_label {
+					display: none;
+				}
+			}
+
+			&#field_6_63 {
+				.gfield_label {
+					display: none;
+				}
+			}
+			small {
+				display: block;
+				font-weight: 500;
+				color:$black;
+			}
+
+			&#field_6_39 {
+				.gfield_radio {
+					@include flex;
+				}
+			}
+
+			&#field_2_40, &#field_2_41, &#field_2_42 {
+				@include make-col(3.8);
+				@include media-breakpoint-up(lg) {
+					@include make-col(3.8);
+				} 
+			}
+			.ginput_complex, .clear-multi {
+				@include flex;
+				label {
+					font-weight: 400;
+				}
+				span {
+					@include make-col(12);
+					@include media-breakpoint-up(lg) {
+						@include make-col(5.8);
+					}
+				}
+				.ginput_container_date {
+					@include make-col(3.8);
+					@include media-breakpoint-up(lg) {
+						@include make-col(3.8);
+					} 
+				}
+			}
+			&#gform_submit_button_3 {
+				float:right;
+			}
+			.gfield_checkbox, .gfield_radio  {
+				li {
+					padding:0;
+					margin:0;
+					@include make-col(12);
+				}
+				label {
+					font-size: 14px;
+					font-weight: 400;
+				}
+			}
+			&.gfield_html {
+				@include text($purple,$weight:600);
+				margin:10px 0;
+				@include media-breakpoint-up(lg) {
+					font-size: 20px;
+				}
+			}
+			&#field_6_13 {
+				&.gfield_html {
+					color:$black;
+					font-weight: normal;
+					@include media-breakpoint-up(lg) {
+						font-size: 16px;
+					}
+				}
+			}
+
+			&#field_5_63 {
+				.ginput_container {
+					display: block;
+					overflow-x: auto;
+					width: 100%;
+					-webkit-overflow-scrolling: touch;
+					-ms-overflow-style: -ms-autohiding-scrollbar;
+				}
+				.gfield_list {
+					width:800px;
+				}
+			}
+
+			table.gfield_list {
+				th {
+					color:$black;
+					font-size: 15px;
+				}
+			}
+		}
+		.gfield_required {
+			color:$error;
+			margin-left:10px;
+		}
+		.validation_message {
+			color:$error;
+			font-size: 12px;
+		}
+	}
+	.button {
+		@include button;
+		width:auto;
+		border:0;
+	}
+
+	.gform_page_footer {
+		.gform_previous_button {
+			background:#c5bec3;
+			color:#525252;
+			margin-right: 40px;
+		}
+	}
+
+	.gfield_list_icons {
+		a {
+			&:before {
+				content:'';
+			}
+		}
+	}
+
+}
